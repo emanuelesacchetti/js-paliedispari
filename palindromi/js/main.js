@@ -1,7 +1,7 @@
 let parolaUtente = prompt('inserisci una parola palindroma');
 
 
-
+let risultato = trovaPalindromo(parolaUtente);
 
 
 
@@ -18,13 +18,13 @@ function trovaPalindromo (parolaInserita) {
     } else {                                   //DISPARI
        
         mezzaParola = (lunghezzaParolaSenzaSpazi - 1) / 2     //escludiamo la lettera centrale e abbiamo due parti uguali
-        element = false
+        let element = true
         console.log(mezzaParola);
 
             for ( let i = 0; i < mezzaParola; i++){
                 
-                if (parolaSenzaSpazi[i] == parolaSenzaSpazi[valoreDecrescente]){
-                    element = true
+                if (parolaSenzaSpazi[i] != parolaSenzaSpazi[valoreDecrescente]){
+                    element = false
 
                     valoreDecrescente--
                 }
