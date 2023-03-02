@@ -26,9 +26,10 @@ function trovaPalindromo (parolaInserita) {
                 if (parolaSenzaSpazi[i] != parolaSenzaSpazi[valoreDecrescente]){
                     element = false
 
-                    
+                    break
+                }else {
+                    valoreDecrescente--
                 }
-                valoreDecrescente--
 
             }
             if(element === true){
