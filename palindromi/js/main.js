@@ -1,34 +1,42 @@
-parolaUtente = prompt('inserisci una parola palindroma');
+let parolaUtente = prompt('inserisci una parola palindroma');
 
 
 
 
-let valoreCrescente = 0;
-let valoreDecrescente = lunghezzaParolaSenzaSpazi - 1;
+
 
 
 function trovaPalindromo (parolaInserita) {
 
-    parolaSenzaSpazi = parolaInserita.split(" ").join("");      //stringa
-    lunghezzaParolaSenzaSpazi = parolaSenzaSpazi.length;      //numero
+    let parolaSenzaSpazi = parolaInserita.split(" ").join("");      //stringa
+    let lunghezzaParolaSenzaSpazi = parolaSenzaSpazi.length;      //numero
+    let valoreCrescente = 0;
+    let valoreDecrescente = lunghezzaParolaSenzaSpazi - 1;
 
     if (lunghezzaParolaSenzaSpazi % 2 == 0){            //SE PARI
     
     } else {                                   //DISPARI
        
         mezzaParola = (lunghezzaParolaSenzaSpazi - 1) / 2     //escludiamo la lettera centrale e abbiamo due parti uguali
-
+        element = false
         console.log(mezzaParola);
 
             for ( let i = 0; i < mezzaParola; i++){
                 
-                if (parolaSenzaSpazi[valoreCrescente] == parolaSenzaSpazi[valoreDecrescente]){
-                    console.log('ok');
-                    valoreCrescente++
+                if (parolaSenzaSpazi[i] == parolaSenzaSpazi[valoreDecrescente]){
+                    element = true
+
                     valoreDecrescente--
                 }
+
+            }
+            if(element === true){
+                console.log('è palindromo');
+            } else if (element === false) {
+                console.log('non è palindromo');
             }
         }
+
 } 
 
 
